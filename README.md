@@ -6,7 +6,7 @@
 >
 > O que foi feito - Requisitos Mínimos:
 > 
-> - Métodos com vetorees para adicionar, remover, consultar, atualizar os produtos (e tratados situações como a remoção de produtos que não estão no estoque)
+> - Métodos com vetores para adicionar, remover, consultar, atualizar os produtos (e tratados situações como a remoção de produtos que não estão no estoque)
 >
 > O que foi feito - Requisitos Adicionais:
 >
