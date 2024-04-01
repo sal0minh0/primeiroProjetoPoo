@@ -1,15 +1,42 @@
 import java.util.Scanner;
 
+//classe geral
 public class projeto {
 
         //declarar os variáveis estaticas
         static Scanner sc = new Scanner(System.in);
         static int maximo; //maximo do estoque
-        static String[] nome; //o produto
-        static int[] quantidade; //quantidade de produtos
-        static double[] preco; //preço dos produtos
-        static String[] validade; //validade dos produtos
+        private String[] nome; //o produto
+        private int[] quantidade; //quantidade de produtos
+        private double[] preco; //preço dos produtos
+        private String[] validade; //validade dos produtos
         static int indice = 0; //tamanho do vetor
+//construtor da classe
+    public projeto(String[] nome, int[] quantidade, double[] preço, String[] validade){
+        this.nome = nome;
+        this.quantidade = quantidade;
+        this.preco = preco;
+        this.validade = validade;
+    }
+    //metodos get e set
+    public String[] getNome() {
+        return nome;
+    }
+    public void setNome(String[] nome) {
+        this.nome = nome;
+    }
+    public int[] getQuantidade() {
+        return quantidade;
+    }
+    public void setQuantidade(int[] quantidade) {
+        this.quantidade = quantidade;
+    }
+    public double[] getPreco() {
+        return preco;
+    }
+    public void setPreco(double[] preco) {
+        this.preco = preco;
+    }
 
 
     //adicionar Produtos
