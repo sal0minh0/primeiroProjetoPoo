@@ -11,5 +11,5 @@
 > O que foi feito - Requisitos Adicionais:
 >
 > - Uso de variáveis estáticas
->
+> - Implementação dos construtores, métodos get e set
 

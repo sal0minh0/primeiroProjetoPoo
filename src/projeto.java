@@ -3,20 +3,23 @@ import java.util.Scanner;
 //classe geral
 public class projeto {
 
-        //declarar os variáveis estaticas
-        static Scanner sc = new Scanner(System.in);
-        static int maximo; //maximo do estoque
+        //declarar os variáveis 
+        Scanner sc = new Scanner(System.in);
+        private int maximo; //maximo do estoque
         private String[] nome; //o produto
         private int[] quantidade; //quantidade de produtos
         private double[] preco; //preço dos produtos
         private String[] validade; //validade dos produtos
-        static int indice = 0; //tamanho do vetor
+        private int indice = 0; //tamanho do vetor
+        
 //construtor da classe
-    public projeto(String[] nome, int[] quantidade, double[] preço, String[] validade){
+    public projeto(String[] nome, int[] quantidade, double[] preco, String[] validade, int maximo, int indice){
+        this.maximo = maximo;
         this.nome = nome;
         this.quantidade = quantidade;
         this.preco = preco;
         this.validade = validade;
+        this.indice = indice;
     }
     //metodos get e set
     public String[] getNome() {
@@ -41,8 +44,10 @@ public class projeto {
 
     //adicionar Produtos
 
-    public static void adicionarProduto() {
+    public void adicionarProduto() {
 
+        
+        
         if (indice < maximo) {
 
             System.out.println("Qual o nome desse produto? ");
@@ -66,7 +71,7 @@ public class projeto {
 
     //remoção de Produtos
 
-    public static void removerProduto() {
+    public void removerProduto() {
         System.out.println("Qual o nome do produto que você deseja remover? ");
         String produtoParaRemover = sc.nextLine();
 
@@ -82,7 +87,7 @@ public class projeto {
                 }
                 indice--;
                 System.out.println();
-                System.out.println("Produto removido com sucesso.");
+                System.out.println("Produto" + " " + produtoParaRemover + " " + "removido com sucesso.");
                 System.out.println();
                 acharProduto = true;
                 break;
@@ -97,7 +102,7 @@ public class projeto {
     }
 
     //consulta de Produtos
-    public static void consultarProdutos() {
+    public void consultarProdutos() {
 
         if (indice == 0) {
             System.out.println();
@@ -121,7 +126,7 @@ public class projeto {
 
     //atualizar o produto selecionado
 
-    public static void atualizarProduto() {
+    public void atualizarProduto() {
         System.out.println("Você deseja atualizar qual produto? ");
         String atual = sc.nextLine();
 
@@ -155,6 +160,17 @@ public class projeto {
 
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
+
+        //variaveis locais
+        int maximo; 
+        String[] nome; 
+        int[] quantidade; 
+        double[] preco; 
+        String[] validade; 
+        int indice = 0; 
+
+        
         //interface para iniciar
 
         System.out.println("Digite 'i' para iniciar e outro digito para sair.");
@@ -175,6 +191,8 @@ public class projeto {
         preco = new double[maximo];
         validade = new String[maximo];
 
+        projeto objeto = new projeto(nome, quantidade, preco, validade, maximo, indice);
+
         //interface menu
 
         while (c == 'i'){
@@ -192,21 +210,21 @@ public class projeto {
             switch (opcao) {
                 case 1:
 
-                    adicionarProduto();
+                    objeto.adicionarProduto();
                     break;
 
                 case 2:
 
-                    removerProduto();
+                    objeto.removerProduto();
                     break;
 
                 case 3:
 
-                    consultarProdutos();
+                    objeto.consultarProdutos();
                     break;
 
                 case 4:
-                    atualizarProduto();
+                    objeto.atualizarProduto();
                     break;
 
                 case 5:
